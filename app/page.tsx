@@ -1,5 +1,6 @@
 // app/page.tsx
 import BoxModel from '@/components/BoxModels';
+import Footer from '@/components/Footer';
 import ImageUpload from '@/components/ImageUpload';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -9,7 +10,7 @@ export default function HomePage() {
     <div>
       <div className="relative h-screen">
         <Image 
-          src="/images/hero.jpg" // Hero image path
+          src="/images/hero3.jpg" // Hero image path
           alt="Background"
           layout="fill"
           objectFit="cover"
@@ -43,6 +44,7 @@ export default function HomePage() {
       <BoxModel />
        {/* Inserted BoxModel component */}
        <ImageUpload />
+       <Footer/>
     </div>
   );
 }
