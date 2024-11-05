@@ -1,4 +1,5 @@
 // app/page.tsx
+
 import BoxModel from '@/components/BoxModels';
 import Footer from '@/components/Footer';
 import ImageUpload from '@/components/ImageUpload';
@@ -8,9 +9,27 @@ import Link from 'next/link';
 export default function HomePage() {
   return (
     <div>
-      <div className="relative h-screen">
+      {/* Navbar */}
+      <nav className="fixed top-0 left-0 w-full bg-black bg-opacity-70 text-white p-4 flex justify-between items-center z-50 shadow-lg">
+        {/* Title on the left side */}
+        <Link href="/" className="text-xl font-bold hover:text-blue-400">
+          BloodGroup Detector
+        </Link>
+        
+        {/* Navigation Links on the right side */}
+        <div className="flex space-x-4">
+          <Link href="/" className="hover:text-blue-400">Home</Link>
+          <Link href="/about" className="hover:text-blue-400">About</Link>
+          <Link href="/login" className="hover:text-blue-400">Login</Link>
+          <Link href="/signup" className="hover:text-blue-400">Sign Up</Link>
+          <Link href="/accuracy" className="hover:text-blue-400">Accuracy</Link>
+        </div>
+      </nav>
+
+      <div className="relative h-screen pt-16"> {/* Added pt-16 to avoid content overlap */}
+        {/* Background Image */}
         <Image 
-          src="/images/hero3.jpg" // Hero image path
+          src="/images/hero.jpg" // Hero image path
           alt="Background"
           layout="fill"
           objectFit="cover"
@@ -30,21 +49,20 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
-
-        <nav className="absolute top-0 left-0 w-full p-4 flex justify-end space-x-4 text-white">
-          <Link href="/">Home</Link>
-          <Link href="/about">About</Link>
-          <Link href="/login">Login</Link>
-          <Link href="/signup">Sign Up</Link>
-          <Link href="/accuracy">Accuracy</Link>
-        </nav>
       </div>
 
-      {/* Inserted BoxModel component */}
-      <BoxModel />
-       {/* Inserted BoxModel component */}
-       <ImageUpload />
-       <Footer/>
+      {/* BoxModel section */}
+      <div className="py-0">
+        <BoxModel />
+      </div>
+
+      {/* ImageUpload section */}
+      <div className="py-0">
+        <ImageUpload />
+      </div>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }

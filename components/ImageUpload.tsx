@@ -13,8 +13,8 @@ export default function ImageUpload() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center p-6 bg-gray-100 rounded-md shadow-lg mt-10">
-      <h2 className="text-2xl font-semibold mb-4 text-gray-700">Predict Blood Group</h2>
+    <div className="flex flex-col items-center justify-center p-6 rounded-md shadow-lg mt-10">
+      <h2 className="text-2xl font-semibold mb-4 text-red-700">Predict Blood Group</h2>
       
       {/* Image preview section */}
       {selectedImage ? (
